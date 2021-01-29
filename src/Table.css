@@ -1,0 +1,21 @@
+.table {
+    margin-top: 20px;
+    overflow-y: scroll;
+    height: 400px;
+    color: #6a5d5d;
+}
+
+/* Makes table rows take up the whole area while in phone view*/
+.table tr {
+    display: flex;
+    justify-content: space-between;
+}
+
+.table td {
+    padding: 0.5rem;
+}
+
+/* Sets odd numbered rows to the color */
+.table tr:nth-of-type(odd) {
+    background-color: #f3f2f8;
+}
