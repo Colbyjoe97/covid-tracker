@@ -15,8 +15,16 @@
     border-color: red;
 }
 
+.infoBox--orange {
+    border-color: rgba(251, 67, 67, 0.734);
+}
+
 .infoBox__cases--green {
     color: lightgreen !important;
+}
+
+.infoBox__cases--orange {
+    color: rgba(251, 67, 67, 0.734) !important;
 }
 
 .infoBox__cases {

@@ -5,7 +5,7 @@ function Table({ countries }) {
     return (
         <div className="table">
             {
-                countries.map(({country, cases}) => (
+                countries.map(({country, cases, todayCases}) => (
                     // type tr>td*2 to get 1 tr with 2 td's
                     <tr>
                         <td>{country}</td>

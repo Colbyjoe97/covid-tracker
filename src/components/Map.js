@@ -17,7 +17,7 @@ function Map({ countries, casesType, center, zoom }) {
              casesType={casesType}
              center={center}
              zoom={zoom}
-            //  scrollWheelZoom={false}
+             scrollWheelZoom={false}
             >
                 <ChangeView center={center} zoom={zoom} />
                 <TileLayer

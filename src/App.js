@@ -18,7 +18,7 @@ function App() {
   const [countryInfo, setCountryInfo] = useState({})
   const [tableData, setTableData] = useState([])
   const [mapCenter, setMapCenter] = useState([ 34.80746, -40.4796 ]);
-  const [mapZoom, setMapZoom] = useState(2);
+  const [mapZoom, setMapZoom] = useState(3);
   const [mapCountries, setMapCountries] = useState([])
   const [casesType, setCasesType] = useState("cases");
 
@@ -67,13 +67,15 @@ function App() {
         setCountry(countryCode)
         setCountryInfo(data)
         {
-          countryCode === "worldwide" ? 
+          countryCode === "worldwide" ?
           setMapCenter([ 34.80746, -40.4796 ]) :
           setMapCenter([data.countryInfo.lat, data.countryInfo.long])
         }
-        {countryCode === "worldwide" ? setMapZoom(2) : setMapZoom(4)}
+        {countryCode === "worldwide" ? setMapZoom(3) : setMapZoom(4)}
       })
-  }
+    }
+  console.log("TODAYS CASES", countryInfo.todayCases)
+  console.log("TOTAL CASES", countryInfo.cases)
   console.log("COUNTRY INFO: ", countryInfo)
 
   return (
@@ -96,12 +98,12 @@ function App() {
 
         <div className="app__stats">
           <InfoBox
-          isRed
+            isRed
             active={casesType === "cases"}
             onClick={(e) => setCasesType("cases")}
             title="Coronavirus Cases"
             total={prettyPrintStat(countryInfo.cases)}
-            cases={prettyPrintStat(countryInfo.todayCases)}
+            cases={countryInfo.todayCases !== 0 ?  prettyPrintStat(countryInfo.todayCases) : prettyPrintStat(0)}
           />
           <InfoBox
             isGreen
@@ -112,11 +114,12 @@ function App() {
             cases={prettyPrintStat(countryInfo.todayRecovered)}
           />
           <InfoBox
-            isRed
+            isOrange
             active={casesType === "deaths"}
             onClick={(e) => setCasesType("deaths")}
             title="Deaths"
             total={prettyPrintStat(countryInfo.deaths)}
+            // total={countryInfo.deaths === 0? prettyPrintStat(countryInfo.deaths) : 1 }
             cases={prettyPrintStat(countryInfo.todayDeaths)}
           />
         </div>

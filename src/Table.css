@@ -9,6 +9,7 @@
 .table tr {
     display: flex;
     justify-content: space-between;
+    text-align: center;
 }
 
 .table td {
