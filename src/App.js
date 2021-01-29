@@ -119,7 +119,6 @@ function App() {
             onClick={(e) => setCasesType("deaths")}
             title="Deaths"
             total={prettyPrintStat(countryInfo.deaths)}
-            // total={countryInfo.deaths === 0? prettyPrintStat(countryInfo.deaths) : 1 }
             cases={prettyPrintStat(countryInfo.todayDeaths)}
           />
         </div>
