@@ -1,1 +1,1 @@
-This project was created using full stack MERN to track live Covid-19 data across the world using an API
+This project was created using full stack MERN to track live Covid-19 data across the world using an API and deployed using Firebase
